@@ -1,9 +1,6 @@
 package pages;
 
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import utils.Urls;
 
@@ -39,7 +36,8 @@ public class BalkaBookMainPage extends BasePage {
         private static final By signInButton = By.xpath("//div[@class='client sign-in'][1]");
         private static final By signInWindow = By.xpath("//div[@class='customwnd_content']");
         private static final By kyivCity = By.xpath("//span[text()='Київ']");
-        private static final By exitFromCabinet = By.xpath("//div[@class='client-back']");
+        private static final By clientAccount = By.xpath("//div[@class='client account']");
+        private static final By exitFromCabinet = By.xpath("//a[@class='logout']");
         private static final By cart = By.xpath("//div[@class='cart how1']");
         private static final By deleteFromCart = By.xpath("//span[@class='del']");
         private static final By makeAnOrder = By.xpath("//a[@class='order butt2']");
@@ -186,7 +184,7 @@ public class BalkaBookMainPage extends BasePage {
     }
 
     public BalkaBookMainPage checkSuccessfulRegistration() {
-        WebElement element = waiters.waitForVisibility(Locators.exitFromCabinet);
+        WebElement element = waiters.waitForVisibility(Locators.clientAccount);
         if (element.isDisplayed()) {
             System.out.println("Your registration passed");
         } else {
@@ -195,6 +193,7 @@ public class BalkaBookMainPage extends BasePage {
         return this;
     }
     public BalkaBookMainPage exitFromCabinet(){
+        workWithElements.click(Locators.clientAccount);
         workWithElements.click(Locators.exitFromCabinet);
         return this;
     }
