@@ -38,7 +38,8 @@ public class BalkaBookMainPage extends BasePage {
         private static final By kyivCity = By.xpath("//span[text()='Київ']");
         private static final By clientAccount = By.xpath("//div[@class='client account']");
         private static final By exitFromCabinet = By.xpath("//a[@class='logout']");
-        private static final By cart = By.xpath("//div[@class='cart how1']");
+        private static final By cart = By.xpath("//div[@class='cart cart1']");
+        private static final By cart2 = By.xpath("//div[@class='cart cart2']");
         private static final By deleteFromCart = By.xpath("//span[@class='del']");
         private static final By makeAnOrder = By.xpath("//a[@class='order butt2']");
         private static final By buy1 = By.xpath("//span[@class='butt3 buy']");
@@ -213,7 +214,10 @@ public class BalkaBookMainPage extends BasePage {
         workWithElements.click(Locators.cart);
         return this;
     }
-
+    public BalkaBookMainPage openCartWithTwoItems() {
+        workWithElements.click(Locators.cart2);
+        return this;
+    }
     public BalkaBookMainPage deleteFromCart() {
         workWithElements.click(Locators.deleteFromCart);
         waiters.switchToAlert().accept();

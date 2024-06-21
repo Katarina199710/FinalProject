@@ -13,8 +13,7 @@ public class ShoppingCart extends BaseTest {
     @Test(priority = 1)
     public void delete_item_from_cart_C12() {
         balkaBookMainPage.openMainPage()
-                .addItemToCart()
-                .openCart()
+                .openCartWithTwoItems()
                 .deleteFromCart()
                 .checkDeleteFromCart();
     }
@@ -22,7 +21,6 @@ public class ShoppingCart extends BaseTest {
     @Test
     public void add_two_items_to_cart_C13() {
         balkaBookMainPage.openMainPage()
-                .addItemToCart()
                 .openCart()
                 .plusItem()
                 .closeCart()
@@ -32,8 +30,7 @@ public class ShoppingCart extends BaseTest {
     @Test
     public void placing_an_order_without_user_data_C14() {
         balkaBookMainPage.openMainPage()
-                .addItemToCart()
-                .openCart()
+                .openCartWithTwoItems()
                 .placeAnOrder()
                 .checkInvalidField();
     }

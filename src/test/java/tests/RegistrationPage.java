@@ -60,7 +60,7 @@ public class RegistrationPage extends BaseTest{
         balkaBookMainPage.openRegisterPage()
                 .insertSurname("doh")
                 .insertName("jon")
-                .insertEmail("mail35@mail.com")
+                .insertEmail("mail36@mail.com")
                 .insertPassword("123345")
                 .insertSecondPassword("123345")
                 .insertPhoneNumber("123456789")
